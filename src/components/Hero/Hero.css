@@ -1,0 +1,64 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.7)), url('../../assets/studio 1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-text p {
+    max-width: 700px;
+    margin: 15px auto 30px;
+    line-height: 1.6;
+    font-size: 18px;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*............media query..............*/
+@media (max-width: 850px) {
+    .hero-text h1 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-text h1 {
+        font-size: 32px;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin: 15px auto 30px;
+    }
+}
