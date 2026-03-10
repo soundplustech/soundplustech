@@ -128,15 +128,16 @@
 /*............media query..............*/
 @media (max-width: 600px) {
     .Testimonials {
-        padding: 0 20px;
+        padding: 0 5%;
     }
 
     .slider {
-        padding: 5px;
+        padding: 20px;
+        border-radius: 20px;
     }
 
     .testimonial-slide {
-        padding: 5px !important;
+        padding: 10px !important;
     }
 
     .user-info {
@@ -144,22 +145,24 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-bottom: 5px;
-        font-size: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
     }
 
     .user-info h3 {
-        font-size: 12px;
+        font-size: 18px;
+        margin-bottom: 5px;
     }
 
     .slider p {
-        font-size: 10px;
-        line-height: 1.2;
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
     }
 
     .next-btn,
     .back-btn {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }

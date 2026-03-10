@@ -56,6 +56,26 @@ nav ul li:hover {
     display: none;
 }
 
+/* Backdrop Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /*............media quary..............*/
 @media (max-width: 1000px) {
     .result {
@@ -78,26 +98,48 @@ nav ul li {
         top: 0;
         right: 0;
         bottom: 0;
-        background: #212ea0;
-        z-index: -1;
-        width: 200px;
-        padding-top: 70px;
-        transition: 0.5s;
+        background: rgba(0, 35, 71, 0.95);
+        backdrop-filter: blur(20px);
+        z-index: 100;
+        width: 280px;
+        padding-top: 100px;
+        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.3);
+        color: var(--white);
+        transform: translateX(0); /* Final state */
+    }
+
+    .hide-mobile-menu {
+        transform: translateX(100%); /* Hidden state */
     }
 
     nav ul li {
         display: block;
-        margin: 25px 40px;
+        margin: 35px 50px;
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        transform: translateX(30px);
+        opacity: 0;
+        transition: 0.4s 0.3s;
+    }
+
+    /* Animate items when menu is visible */
+    nav ul:not(.hide-mobile-menu) li {
+        transform: translateX(0);
+        opacity: 1;
     }
 
     .menu-icon {
         display: block;
-        width: 40px;
+        width: 35px;
         cursor: pointer;
+        z-index: 101;
+        transition: var(--transition);
     }
 
-    .hide-mobile-menu {
-        right: -200px;
-        ;
+    .menu-icon.rotate {
+        transform: rotate(90deg);
     }
 }

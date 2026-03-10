@@ -83,10 +83,20 @@
 @media (max-width: 700px) {
     .contact {
         display: block;
-
+        margin: 40px auto;
     }
 
     .contact-col {
-        padding: 20px;
+        padding: 30px 0;
+    }
+
+    .contact-col p {
+        margin: 0 0 30px;
+        text-align: left;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        padding: 15px;
     }
 }

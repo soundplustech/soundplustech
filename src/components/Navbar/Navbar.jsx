@@ -20,20 +20,22 @@ const Navbar = () => {
     setMobileMenu(!mobilemenu);
   }
   return (
-    <nav className={`container ${sticky || mobilemenu ? 'dark-nav' : 'transparent-nav'}`}>
-      <img src={result} alt="" className='result' />
+    <>
+      <div className={`menu-overlay ${mobilemenu ? 'active' : ''}`} onClick={toggleMenu}></div>
+      <nav className={`container ${sticky || mobilemenu ? 'dark-nav' : 'transparent-nav'}`}>
+        <img src={result} alt="" className='result' />
 
-      <ul className={mobilemenu ? '' : 'hide-mobile-menu'}>
-        <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
-        <li><Link to='program' smooth={true} offset={-300} duration={500}>Program</Link></li>
-        <li><Link to='about' smooth={true} offset={-160} duration={500}>About</Link></li>
-        <li><Link to='Campus' smooth={true} offset={-300} duration={500}>Gallary</Link></li>
-        <li><Link to='Testimonials' smooth={true} offset={-300} duration={500}>Review</Link></li>
-        <li><Link to='contact' smooth={true} offset={-300} duration={500} className='btn'>Contact us</Link></li>
-
-      </ul>
-      <img src={menu} alt='' className='menu-icon' onClick={toggleMenu}></img>
-    </nav>
+        <ul className={mobilemenu ? '' : 'hide-mobile-menu'}>
+          <li><Link to='hero' smooth={true} offset={0} duration={500} onClick={toggleMenu}>Home</Link></li>
+          <li><Link to='program' smooth={true} offset={-300} duration={500} onClick={toggleMenu}>Program</Link></li>
+          <li><Link to='about' smooth={true} offset={-160} duration={500} onClick={toggleMenu}>About</Link></li>
+          <li><Link to='Campus' smooth={true} offset={-300} duration={500} onClick={toggleMenu}>Gallary</Link></li>
+          <li><Link to='Testimonials' smooth={true} offset={-300} duration={500} onClick={toggleMenu}>Review</Link></li>
+          <li><Link to='contact' smooth={true} offset={-300} duration={500} className='btn' onClick={toggleMenu}>Contact us</Link></li>
+        </ul>
+        <img src={menu} alt='' className={`menu-icon ${mobilemenu ? 'rotate' : ''}`} onClick={toggleMenu}></img>
+      </nav>
+    </>
   )
 }
 
