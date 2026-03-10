@@ -35,8 +35,9 @@
     left: 0;
 }
 
+/* removed width: 300px for user-info img to prevent distortion */
 .user-info img {
-    width: 300px;
+    border-radius: 50%;
 }
 
 
@@ -52,10 +53,20 @@
     position: relative;
 }
 
+.slider-list {
+    width: auto;
+    /* Allow inline style to take over */
+}
+
+.testimonial-slide {
+    width: 100%;
+    /* base width, JS will handle percentages relative to ul */
+}
+
 .slider ul {
     display: flex;
-    width: 100%;
-    overflow-x: hidden;
+    overflow-x: visible;
+    /* Let children overflow within the hidden slider container */
     margin: 0;
     padding: 0;
 }
@@ -67,8 +78,8 @@
 }
 
 .slider img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-right: 15px;
     border: 4px solid var(--secondary-color);
@@ -91,37 +102,64 @@
     .Testimonials {
         padding: 0 40px;
     }
+
     .next-btn,
     .back-btn {
         padding: 10px;
         width: 35px;
     }
+
     .slider ul li {
         padding: 10px;
     }
+
     .slider {
         padding: 10px;
     }
+
     .slider img {
         width: 50px;
+        height: 50px;
+        object-fit: cover;
         border: 3px solid #212ea0;
     }
 }
 
 /*............media query..............*/
 @media (max-width: 600px) {
+    .Testimonials {
+        padding: 0 20px;
+    }
+
+    .slider {
+        padding: 5px;
+    }
+
+    .testimonial-slide {
+        padding: 5px !important;
+    }
+
     .user-info {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 10px;
     }
 
     .user-info h3 {
-        font-size: 16px;
-
+        font-size: 12px;
     }
 
     .slider p {
-        font-size: 12px;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .next-btn,
+    .back-btn {
+        width: 30px;
+        height: 30px;
     }
 }

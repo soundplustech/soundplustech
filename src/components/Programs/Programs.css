@@ -17,16 +17,16 @@
 .program {
     flex-basis: 31%;
     position: relative;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     transition: var(--transition);
 }
 
 .program:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: var(--premium-shadow);
 }
 
 .caption {
@@ -35,12 +35,12 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 33, 71, 0.7);
+    background: rgba(0, 26, 53, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #fff;
+    color: var(--secondary-color);
     opacity: 0;
     transition: var(--transition);
 }

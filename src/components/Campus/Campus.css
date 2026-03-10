@@ -29,10 +29,11 @@
 @media (max-width: 800px) {
     .gallery {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .gallery img {
-        width: 48%;
+        width: 45%;
         margin-bottom: 25px;
     }
 }
